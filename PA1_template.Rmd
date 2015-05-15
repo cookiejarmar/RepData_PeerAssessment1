@@ -97,7 +97,6 @@ Calculate and report the mean and median total number of steps taken per day.
 mean(newtotalsteps$total_daily_steps)
 median(newtotalsteps$total_daily_steps)
 ```
-##Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 These values are very close to the estimates from the first part of the assignment, in fact the mean is nearly identical, and the median only slightly increased.  The impact of imputing missing data will slightly alter the overall data, but for the most part in does not change.
 
 ##Are there differences in activity patterns between weekdays and weekends?
@@ -138,10 +137,11 @@ at <- c(newSPI$posix[1],
 labels <- c("00:00", "05:00", "10:00", "15:00", "20:00")
 
 #plot the data
-xyplot(steps ~ posix | day_type, data = newSPI,
+final_plot <- xyplot(steps ~ posix | day_type, data = newSPI,
        type = "l",
        xlab = "Interval",
        ylab = "Number of steps",
        layout = c(1, 2),
        scales = list(x=list(at = at, labels = labels)))
+final_plot
 ```

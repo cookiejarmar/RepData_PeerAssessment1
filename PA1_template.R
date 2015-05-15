@@ -109,9 +109,10 @@ at <- c(newSPI$posix[1],
 labels <- c("00:00", "05:00", "10:00", "15:00", "20:00")
 
 #plot the data
-xyplot(steps ~ posix | day_type, data = newSPI,
+final_plot <- xyplot(steps ~ posix | day_type, data = newSPI,
        type = "l",
        xlab = "Interval",
        ylab = "Number of steps",
        layout = c(1, 2),
        scales = list(x=list(at = at, labels = labels)))
+final_plot
